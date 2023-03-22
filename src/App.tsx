@@ -11,18 +11,18 @@ function App() {
   const [boardState, setBoardState] = useState<BoardStateType | undefined>(undefined);
 
   const handleMakeMove = (cellNumber: number): void => {
-    currentGame!.makeMove = cellNumber;
-    setBoardState([...currentGame!.boardState]);
+    (currentGame as Game).makeMove = cellNumber;
+    setBoardState([...(currentGame as Game).boardState]);
     if (currentGame?.Winner) {
       currentGame.gameStatus = 'ended';
     } else {
-      currentGame!.gameStatus = 'on going';
+      (currentGame as Game).gameStatus = 'on going';
     }
   };
 
   const handleRestart = () => {
-    currentGame!.restart();
-    setBoardState([...currentGame!.boardState]);
+    (currentGame as Game).restart();
+    setBoardState([...(currentGame as Game).boardState]);
   };
 
   useEffect(() => {
