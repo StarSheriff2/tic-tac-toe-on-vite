@@ -101,7 +101,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>{gamePrompt()}</p>
+      <h2 className="game-prompt">{gamePrompt()}</h2>
       <button className="start-button" onClick={handleRestart} type="button">
         Restart Game
       </button>

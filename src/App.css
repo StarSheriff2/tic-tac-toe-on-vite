@@ -6,6 +6,7 @@
   width: 100%;
 }
 
+.game-prompt,
 .start-button {
   margin-bottom: 2rem;
 }
