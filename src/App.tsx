@@ -23,7 +23,6 @@ function App() {
   const handleRestart = () => {
     currentGame!.restart();
     setBoardState([...currentGame!.boardState]);
-    console.log(currentGame!.boardState);
   };
 
   useEffect(() => {
