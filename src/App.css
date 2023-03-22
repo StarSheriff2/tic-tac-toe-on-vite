@@ -12,7 +12,6 @@
 
 .board {
   display: grid;
-  background-color: blue;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   max-width: 500px;
@@ -20,15 +19,17 @@
   width: 30vw;
   height: 30vw;
   margin: 0 auto;
+  border: #646cff solid 1px;
 }
 
 .board-cell {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  background-color: #1a1a1a;
   padding: 1px;
-  border: green solid 2px;
+  border: #646cff solid 2px;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .mark {
