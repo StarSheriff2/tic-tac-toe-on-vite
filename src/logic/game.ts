@@ -2,6 +2,10 @@ export type GameStatus = 'idle' | 'on going' | 'ended';
 export type Mark = 'X' | '0' | null;
 export type BoardState = Mark[];
 
+export const DEFAULT_BOARD = Object.freeze(
+  Array.from({ length: 9 }, () => null)
+);
+
 class Game {
   private move: 'X' | '0';
   private board: BoardState;
@@ -20,7 +24,6 @@ class Game {
   }
 
   static init() {
-    this.instance = new Game();
     return this.getInstance();
   }
 
@@ -28,11 +31,13 @@ class Game {
     this.move = 'X';
     this.status = 'idle';
     this.winner = null;
-    this.board = Array.from({ length: 9 }, () => null);
+    this.board = [...DEFAULT_BOARD];
   }
 
   public set makeMove(cellNum: number) {
-    this.board[cellNum] = this.move;
+    const updatedBoard = [...this.board];
+    updatedBoard.splice(cellNum, 1, this.move);
+    this.board = updatedBoard;
     this.move = this.move === 'X' ? '0' : 'X';
     this.setWinner();
   }
@@ -87,7 +92,8 @@ class Game {
 
   constructor() {
     this.move = 'X';
-    this.board = Array.from({ length: 9 }, () => null);
+    // this.board = Array.from({ length: 9 }, () => null);
+    this.board = [...DEFAULT_BOARD];
     this.status = 'idle';
     this.winner = null;
   }
