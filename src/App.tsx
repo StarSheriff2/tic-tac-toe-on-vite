@@ -1,28 +1,28 @@
-import { useEffect, useState } from 'react';
 import './App.css';
+
+import { useEffect, useState } from 'react';
+
 import Game, { BoardState as BoardStateType } from './logic/game';
 
 type Marks = 'X' | '0' | null;
 
 function App() {
   const [currentGame, setGame] = useState<Game | undefined>();
-  const [boardState, setBoardState] = useState<BoardStateType | undefined>(
-    undefined
-  );
+  const [boardState, setBoardState] = useState<BoardStateType | undefined>(undefined);
 
   const handleMakeMove = (cellNumber: number): void => {
-    currentGame!.makeMove = cellNumber;
-    setBoardState([...currentGame!.boardState]);
+    (currentGame as Game).makeMove = cellNumber;
+    setBoardState([...(currentGame as Game).boardState]);
     if (currentGame?.Winner) {
       currentGame.gameStatus = 'ended';
     } else {
-      currentGame!.gameStatus = 'on going';
+      (currentGame as Game).gameStatus = 'on going';
     }
   };
 
   const handleRestart = () => {
-    currentGame!.restart();
-    setBoardState([...currentGame!.boardState]);
+    (currentGame as Game).restart();
+    setBoardState([...(currentGame as Game).boardState]);
   };
 
   useEffect(() => {
@@ -63,11 +63,7 @@ function App() {
     return (
       <div className="board">
         {board.map((cellMark, idx) => (
-          <BoardCell
-            key={`${idx}-${cellMark}`}
-            mark={cellMark}
-            cellNumber={idx}
-          />
+          <BoardCell key={`${idx}-${cellMark}`} mark={cellMark} cellNumber={idx} />
         ))}
       </div>
     );
@@ -84,6 +80,15 @@ function App() {
         className="board-cell"
         role="button"
         onClick={() => {
+          if (
+            currentGame?.boardState[cellNumber] ||
+            currentGame?.gameStatus === 'ended'
+          ) {
+            return;
+          }
+          handleMakeMove(cellNumber);
+        }}
+        onKeyDown={() => {
           if (
             currentGame?.boardState[cellNumber] ||
             currentGame?.gameStatus === 'ended'

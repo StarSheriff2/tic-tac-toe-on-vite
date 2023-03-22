@@ -2,9 +2,7 @@ export type GameStatus = 'idle' | 'on going' | 'ended';
 export type Mark = 'X' | '0' | null;
 export type BoardState = Mark[];
 
-export const DEFAULT_BOARD = Object.freeze(
-  Array.from({ length: 9 }, () => null)
-);
+export const DEFAULT_BOARD = Object.freeze(Array.from({ length: 9 }, () => null));
 
 class Game {
   private move: 'X' | '0';
