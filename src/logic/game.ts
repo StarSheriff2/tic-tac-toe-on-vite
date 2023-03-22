@@ -25,12 +25,10 @@ class Game {
   }
 
   public restart() {
-    console.log('hello');
     this.move = 'X';
     this.status = 'idle';
     this.winner = null;
     this.board = Array.from({ length: 9 }, () => null);
-    console.log(this.board);
   }
 
   public set makeMove(cellNum: number) {

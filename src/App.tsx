@@ -85,7 +85,10 @@ function App() {
         className="board-cell"
         role="button"
         onClick={() => {
-          if (currentGame?.boardState[cellNumber]) {
+          if (
+            currentGame?.boardState[cellNumber] ||
+            currentGame?.gameStatus === 'ended'
+          ) {
             return;
           }
           handleMakeMove(cellNumber);
