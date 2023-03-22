@@ -3,4 +3,26 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+}
+
+.board {
+  display: grid;
+  background-color: blue;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 500px;
+  max-height: 500px;
+  width: 30vw;
+  height: 30vw;
+  margin: 0 auto;
+}
+
+.board-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  padding: 1px;
+  border: green solid 2px;
 }

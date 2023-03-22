@@ -1,12 +1,27 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  return (
+    <div className="App">
+      <Board />
+    </div>
+  );
+}
 
-  return <div className="App"></div>;
+function Board() {
+  return (
+    <div className="board">
+      <div className="board-cell">1</div>
+      <div className="board-cell">2</div>
+      <div className="board-cell">3</div>
+      <div className="board-cell">4</div>
+      <div className="board-cell">5</div>
+      <div className="board-cell">6</div>
+      <div className="board-cell">7</div>
+      <div className="board-cell">8</div>
+      <div className="board-cell">9</div>
+    </div>
+  );
 }
 
 export default App;
