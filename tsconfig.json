@@ -14,7 +14,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "removeComments": true,                           /* Disable emitting comments. */
+    "noEmitOnError": true,                            /* Disable emitting files if any type checking errors are reported. */
+    "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    "noUnusedLocals": true,                              /* Enable error reporting when local variables aren't read. */
+    "noUnusedParameters": true,                       /* Interpret optional property types as written, rather than adding 'undefined'. */
+    "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

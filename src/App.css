@@ -3,4 +3,40 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+}
+
+.game-prompt,
+.start-button {
+  margin-bottom: 2rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  max-width: 500px;
+  max-height: 500px;
+  width: 30vw;
+  height: 30vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: #646cff solid 2px;
+  gap: 2px;
+  background-color: #646cff;
+}
+
+.board-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  padding: 1px;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.mark {
+  font-size: 4rem;
 }
