@@ -90,7 +90,6 @@ class Game {
 
   constructor() {
     this.move = 'X';
-    // this.board = Array.from({ length: 9 }, () => null);
     this.board = [...DEFAULT_BOARD];
     this.status = 'idle';
     this.winner = null;

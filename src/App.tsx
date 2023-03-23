@@ -97,7 +97,7 @@ function App() {
           }
           handleMakeMove(cellNumber);
         }}
-        tabIndex={-1}
+        tabIndex={0}
       >
         <p className="mark">{mark ?? ''}</p>
       </div>
